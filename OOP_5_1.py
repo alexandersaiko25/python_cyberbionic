@@ -1,8 +1,11 @@
-def mean_num():
-    a = [1, 2, 3, 4, 5]
-    b = sum(a[3:]) / len(a[3:])
-    c = sum(a) / len(a)
-    print(f"Среднее арифметическое среза списка: {a[3:]}, является число: {b}")
-    print(f"Среднее арифметическое всего списка: {a}, является число: {c}")
-
-mean_num()
+def mean_num(*args):
+    total = 0
+    for item in args:
+        total += item
+    print(f"Сумма всех элементов: {total}")
+    average = total / len(args)
+    print(f"Среднее арифметическое элементов: {average}")
+    diapazon = sum(args[3:]) / len(args[3:])
+    print(f"Среднее арифметическое в диапазоне с 4го элемента: {diapazon}")
+    
+mean_num(1, 2, 3, 4, 5)
