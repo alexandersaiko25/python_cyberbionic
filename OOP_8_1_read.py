@@ -1,9 +1,11 @@
-import os
-from decimal import Decimal
+import array
 
 def read_file():
-    with open("/home/alexander/PycharmProjects/pythonProject/venv/random.txt", "r", encoding='UTF-8') as the_file:
-        content = the_file.readlines()
-        print(content)
+    numbers = []
+    with open("my_file.txt", "r") as the_file:
+        for line in the_file:
+            numbers.append(int(line))
+        print(numbers)
+        print("Сумма всех элементов из файла = ", sum(numbers))
 
 read_file()

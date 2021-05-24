@@ -1,17 +1,10 @@
 import random
-import sys
-import os
-import re
 
 def write_to_file():
-    sys.stdout = open("random.txt", "w")
-    total = 0
-    for element in range(10000):
-        k = random.randrange(100)
-        print(k, end=" ")
-        total += k
-    print("\nСумма всех элементов списка: ", total)
-    sys.stdout.close()
-
+    my_list = [random.randint(1, 100)
+                for element in range(10000)]
+    with open('my_file.txt', 'w') as num_files:
+        for number in my_list:
+            num_files.write('{}\n'.format(number))
 
 write_to_file()
